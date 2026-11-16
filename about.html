@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:auto;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}/* scrollbar active */</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#006f67","inverse-primary":"#b3c5ff","secondary":"#006a63","on-background":"#131b2e","on-tertiary-fixed":"#002117","on-secondary-fixed":"#00201d","on-surface":"#131b2e","inverse-surface":"#283044","tertiary":"#145643","primary-container":"#1d5bd8","secondary-container":"#99efe5","on-secondary-fixed-variant":"#00504a","background":"#faf8ff","on-surface-variant":"#434654","tertiary-container":"#316f5a","primary":"#0043b1","surface-container-lowest":"#ffffff","on-tertiary-container":"#afefd5","surface-container-highest":"#dae2fd","surface-container-low":"#f2f3ff","error":"#ba1a1a","surface-bright":"#faf8ff","surface-container-high":"#e2e7ff","inverse-on-surface":"#eef0ff","primary-fixed":"#dbe1ff","on-tertiary-fixed-variant":"#0b513d","surface-container":"#eaedff","on-primary-fixed-variant":"#003fa5","secondary-fixed-dim":"#80d5cb","surface":"#faf8ff","on-primary-container":"#d9e0ff","secondary-fixed":"#9cf2e8","error-container":"#ffdad6","tertiary-fixed":"#b0f0d6","on-error":"#ffffff","on-error-container":"#93000a","primary-fixed-dim":"#b3c5ff","on-primary-fixed":"#00184a","outline":"#737686","surface-tint":"#1055d2","tertiary-fixed-dim":"#95d3ba","on-tertiary":"#ffffff","on-secondary":"#ffffff","surface-variant":"#dae2fd","surface-dim":"#d2d9f4","outline-variant":"#c3c6d6","on-primary":"#ffffff"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"gutter":"1.5rem","margin":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-xl":"2.5rem","space-md":"1rem","space-lg":"1.5rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"title-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"display":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"800"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"20px",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}]}}}};</script>
+<style>
+/* Responsive 320px screen width optimizations */
+html, body {
+  overflow-x:hidden;max-width:100vw;
+}
+* {
+  box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .max-w-7xl {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+@media (max-width: 340px) {
+  .text-display, .text-headline-xl {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+  .text-headline-lg {
+    font-size: 22px !important;
+    line-height: 28px !important;
+  }
+  .p-8, .p-space-lg, .p-space-xl {
+    padding: 14px !important;
+  }
+}
+</style>
+
+<script src="validations.js"></script>
+
+<style id="scroll-fix">
+/* Enable smooth and complete page scrolling */
+html {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth !important;
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  min-height: 100vh !important;
+  position: relative !important;
+  overscroll-behavior: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure modern, visible, functional scrollbars */
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8 !important;
+  border-radius: 5px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b !important;
+}
+</style>
+
+</head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.06)] border-b border-outline-variant/20">
+  <!-- Top Helpline & Region Bar (Responsive down to 320px) -->
+  <div class="bg-primary text-on-primary py-1 px-3 sm:px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col xs:flex-row items-center justify-between text-[11px] sm:text-label-sm gap-0.5">
+      <div class="flex items-center gap-1.5 truncate max-w-[240px] xs:max-w-none text-center xs:text-left">
+        <span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse shrink-0"></span>
+        <span class="truncate">Serving Salem, Fairlands, Hasthampatti &amp; Surrounds</span>
+      </div>
+      <a href="tel:+914272408800" class="inline-flex items-center gap-1 hover:underline text-[11px] sm:text-label-sm font-semibold text-cyan-200">
+        <span class="material-symbols-outlined text-[13px]">call</span>
+        <span>24/7 Helpline: +91 427 240 8800</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Row -->
+  <div class="h-16 sm:h-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 flex items-center justify-between gap-2">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center select-none group shrink-0" aria-label="Stackly Salem Home">
+      <img src="stackly logo.webp" alt="Stackly Salem Healthcare &amp; Nursing" class="h-9 sm:h-11 w-auto object-contain hover:opacity-95 transition-opacity" />
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-1">
+      <a href="index.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Home</a>
+      <a href="about.html" class="bg-surface-container-high text-primary font-bold rounded-full px-4 py-2 shadow-sm">About</a>
+      <a href="service.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Services</a>
+      <a href="blog.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Blog</a>
+      <a href="contact.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Contact</a>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <a class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary-container font-label-lg text-xs sm:text-label-lg px-4 sm:px-6 py-2.5 sm:py-3 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md font-bold" href="contact.html#care-inquiry-form">
+        Book Care in Salem
+      </a>
+      <a href="login.html" title="Patient &amp; Family Portal" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-transform hover:scale-105 shadow-sm shrink-0" aria-label="Sign in to care portal">
+        <span class="material-symbols-outlined text-[18px]">person</span>
+      </a>
+      <!-- Mobile Menu Toggle Button (Visible < 1024px) -->
+      <button type="button" id="mobile-nav-toggle" class="lg:hidden p-2 rounded-xl text-primary hover:bg-surface-container focus:outline-none transition-colors shrink-0" aria-label="Toggle Navigation Menu">
+        <span class="material-symbols-outlined text-[26px]" id="mobile-nav-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Dropdown Menu (< 1024px) -->
+  <div id="mobile-nav-menu" class="lg:hidden hidden border-t border-outline-variant/20 bg-surface-container-lowest/98 backdrop-blur-2xl px-4 py-5 shadow-2xl max-h-[calc(100vh-100px)] overflow-y-auto">
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center justify-between pb-2 mb-1 border-b border-surface-container">
+        <span class="font-label-sm text-xs text-secondary font-bold uppercase tracking-wider">Salem Care Navigation</span>
+        <span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">24/7 Active</span>
+      </div>
+      <nav class="flex flex-col gap-1 font-semibold text-sm">
+        <a href="index.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">home</span> Home</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="about.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-primary-fixed text-primary font-bold">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">info</span> About Us</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="service.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">medical_services</span> Services</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="blog.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">article</span> Health Blog</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="contact.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">support_agent</span> Contact &amp; Consult</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+      </nav>
+
+      <div class="pt-3 border-t border-surface-container flex flex-col gap-2">
+        <a href="contact.html#care-inquiry-form" class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-bold text-center py-3 rounded-xl shadow-md text-xs sm:text-sm">
+          <span class="material-symbols-outlined text-[17px]">calendar_month</span>
+          <span>Book Care in Salem</span>
+        </a>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <a href="login.html" class="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-surface-container text-primary font-bold text-center">
+            <span class="material-symbols-outlined text-[15px]">family_restroom</span>
+            <span>Family Portal</span>
+          </a>
+          <a href="login.html?role=admin" class="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-surface-container text-secondary font-bold text-center">
+            <span class="material-symbols-outlined text-[15px]">admin_panel_settings</span>
+            <span>Staff Admin</span>
+          </a>
+        </div>
+        <a href="tel:+914272408800" class="flex items-center justify-center gap-2 py-2 text-secondary text-xs font-bold text-center">
+          <span class="material-symbols-outlined text-[15px]">call</span>
+          <span>Emergency Desk: +91 427 240 8800</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Hero Header -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-12">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md mb-6">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="text-primary font-bold">About Us</span>
+</div>
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm mb-5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        Salem's Trusted Healthcare Partner
+      </div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight mb-6">
+        Devoted to caring for Salem families with <span class="text-primary">compassion</span> & clinical rigor
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Founded right in the heart of Salem, Tamil Nadu, Stackly Salem bridges hospital-grade clinical precision with the warmth and emotional security of healing at home. From post-operative monitoring to dedicated geriatric nursing across Fairlands and broader districts, our care is anchored in empathy, continuous physician alignment, and accredited standards.
+      </p>
+</div>
+</section>
+<!-- Core About Stackly Section (Faithful to Image 2 reference layout) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-10 lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Visual Composition: Two Asymmetric Rounded Cards + Circular 10+ Badge -->
+<div class="lg:col-span-6 relative flex items-end justify-center lg:justify-start gap-4 sm:gap-6">
+<!-- Photo 1: Primary Portrait -->
+<div class="w-1/2 max-w-[240px] sm:max-w-[270px] h-[340px] sm:h-[400px] overflow-hidden rounded-[2.5rem] shadow-sm transform translate-y-6">
+<img class="w-full h-full object-cover" data-alt="Professional Indian healthcare nurse in spotless medical scrubs holding a digital charting tablet, smiling warmly in a bright, modern hospital clinic environment in Salem, soft natural lighting." src="images/care-image-12.webp"/>
+</div>
+<!-- Photo 2: Caregiver with Elderly Patient + Overlapping Circular Experience Badge -->
+<div class="relative w-1/2 max-w-[270px] sm:max-w-[310px] h-[400px] sm:h-[480px]">
+<div class="w-full h-full overflow-hidden rounded-[2.5rem] shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Compassionate nurse and smiling young family member sitting beside a happy elderly grandfather during home visit consultation in a cozy Salem residence, natural ambient sunlight." src="images/care-image-13.webp"/>
+</div>
+<!-- Circular '10+ Years of Experience' Badge overlapping -->
+<div class="absolute -bottom-8 -left-10 sm:-left-12 w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-surface-container-lowest shadow-xl flex items-center justify-center p-2 z-20">
+<!-- Curved text SVG ring -->
+<svg class="absolute inset-0 w-full h-full animate-[spin_24s_linear_infinite]" viewbox="0 0 100 100">
+<path d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" id="circlePath"></path>
+<text class="text-[9.5px] font-bold tracking-[0.22em] uppercase fill-primary">
+<textpath href="#circlePath" startoffset="0%">
+                  Years of Experience • Years of Care •
+                </textpath>
+</text>
+</svg>
+<div class="flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md text-primary font-bold">10+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Content Block: 'Who we are' and Story -->
+<div class="lg:col-span-6 flex flex-col items-start lg:pl-6">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-primary font-label-md text-label-md mb-4">
+          Who we are
+        </span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">
+          About <span class="text-primary">Stackly Care</span> Salem
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-6">
+          We are dedicated to delivering exceptional healthcare services with compassion and expertise. With an unyielding commitment to patient-centered care, our team of licensed healthcare professionals in Salem strives to provide comprehensive medical treatments tailored to individual needs.
+        </p>
+<!-- Feature Points -->
+<div class="space-y-4 mb-8 w-full">
+<div class="flex items-start gap-3 p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-secondary-container/50 text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Rigorously Vetted Salem Professionals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">NABH and TNC (Tamil Nadu Nurses & Midwives Council) certified background-checked staff.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">monitor_heart</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Individualized Medical Monitoring</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Customized vitals tracking, medication charts, and precision patient-caregiver matching.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_hospital</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Salem Hospital Coordination</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Direct integration with attending physicians across prominent hospitals in Salem.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-tertiary text-on-tertiary font-label-lg text-label-lg hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-md" href="contact.html#care-inquiry-form">
+          Learn more about our standards
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Salem Footprint & Milestones Counters -->
+<section class="w-full bg-surface-container-low py-14">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center">
+<span class="font-display text-display text-primary tracking-tight">2,500+</span>
+<span class="font-title-md text-title-md text-on-surface mt-2">Salem Families Served</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Across 14 Salem city wards</span>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center">
+<span class="font-display text-display text-secondary tracking-tight">98.8%</span>
+<span class="font-title-md text-title-md text-on-surface mt-2">Satisfaction Rating</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Independent clinical reviews</span>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center">
+<span class="font-display text-display text-primary tracking-tight">85+</span>
+<span class="font-title-md text-title-md text-on-surface mt-2">Certified Nurses</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Specialized in critical & palliative</span>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center">
+<span class="font-display text-display text-tertiary tracking-tight">15 Min</span>
+<span class="font-title-md text-title-md text-on-surface mt-2">Emergency Dispatch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Rapid response unit in Salem</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Accordion & Visual Feature (Referencing Image 3) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left: Accordion Selection -->
+<div class="lg:col-span-6 flex flex-col">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-8">
+          Why choose <span class="text-primary">Nursing Care</span> in Salem
+        </h2>
+<div class="space-y-4" id="faq-accordion">
+<!-- Item 1 -->
+<div class="rounded-2xl bg-surface-container-lowest shadow-sm transition-all overflow-hidden border border-outline-variant/30">
+<button class="w-full flex items-center justify-between p-5 text-left font-title-md text-title-md text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleAccordion(1)">
+<span>Experienced caregivers & clinical monitors</span>
+<span class="material-symbols-outlined text-primary text-[22px] transition-transform duration-300" id="icon-1">add</span>
+</button>
+<div class="hidden px-5 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="content-1">
+              Every nurse in our Salem contingent undergoes stringent credential verification, background validation, and continuous training in ICU step-down, chronic ailment stewardship, and palliative comfort.
+            </div>
+</div>
+<!-- Item 2 -->
+<div class="rounded-2xl bg-surface-container-lowest shadow-sm transition-all overflow-hidden border border-outline-variant/30">
+<button class="w-full flex items-center justify-between p-5 text-left font-title-md text-title-md text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleAccordion(2)">
+<span>Compassionate, patient-first approach</span>
+<span class="material-symbols-outlined text-primary text-[22px] transition-transform duration-300" id="icon-2">add</span>
+</button>
+<div class="hidden px-5 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="content-2">
+              We understand that recovery requires emotional ease. Our nurses bring respectful communication, local cultural understanding, and attentive reassurance to patient homes.
+            </div>
+</div>
+<!-- Item 3 -->
+<div class="rounded-2xl bg-surface-container-lowest shadow-sm transition-all overflow-hidden border border-outline-variant/30">
+<button class="w-full flex items-center justify-between p-5 text-left font-title-md text-title-md text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleAccordion(3)">
+<span>Personalized, doctor-aligned care plans</span>
+<span class="material-symbols-outlined text-primary text-[22px] transition-transform duration-300" id="icon-3">add</span>
+</button>
+<div class="hidden px-5 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="content-3">
+              We do not believe in one-size-fits-all healthcare. We craft personalized daily protocols detailing dosage regimens, mobility routines, and doctor review schedules.
+            </div>
+</div>
+<!-- Item 4 -->
+<div class="rounded-2xl bg-surface-container-lowest shadow-sm transition-all overflow-hidden border border-outline-variant/30">
+<button class="w-full flex items-center justify-between p-5 text-left font-title-md text-title-md text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleAccordion(4)">
+<span>24/7 On-Call Salem Doctor Liaison</span>
+<span class="material-symbols-outlined text-primary text-[22px] transition-transform duration-300" id="icon-4">add</span>
+</button>
+<div class="hidden px-5 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="content-4">
+              Should vitals change unexpectedly, our nurses have direct tele-escalation pathways to supervisory physicians across Salem without delay.
+            </div>
+</div>
+</div>
+<!-- Supportive Badges in Row below accordion -->
+<div class="grid grid-cols-2 gap-4 mt-8 pt-4">
+<div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">24/7 Availability</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">For your peace of mind</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">clinical_notes</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Clinical Expertise</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Specialized qualifications</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Feature Image with Circular Play/Focus Indicator -->
+<div class="lg:col-span-6 relative">
+<div class="w-full h-[460px] rounded-[3rem] overflow-hidden shadow-xl relative">
+<img class="w-full h-full object-cover" data-alt="Experienced young female nurse gently holding the hands of an elderly man resting comfortably on an armchair at home, with gentle sunlight highlighting their positive relationship, warm medical photography." src="images/care-image-14.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<!-- Floating Play/Care Pulse Badge -->
+<div class="absolute top-1/2 -left-6 sm:-left-7 -translate-y-1/2 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px] sm:text-[32px] ml-1">play_arrow</span>
+</div>
+<div class="absolute bottom-6 left-8 right-8 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Salem Community Stories</span>
+<p class="font-headline-sm text-headline-sm mt-1">See how our nurses bring comfort directly to your doorstep</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission, Vision & Values (Asymmetric Pill Cards inspired by Image 4) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-primary font-label-md text-label-md inline-block mb-3">Our Guiding Pillars</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Built on purpose, driven by values</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Mission Card -->
+<div class="p-8 rounded-[2.5rem] bg-secondary-container/20 hover:bg-secondary-container/30 transition-all flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-secondary-container text-on-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[30px]">flag</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Pillar 01</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-4">Our Mission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Empowering patients, seniors, and recovering individuals in Salem to thrive in the comfort of their homes through dignified, clinically advanced, and thoroughly compassionate nursing.
+          </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span>Patient-centered healing</span>
+<span class="material-symbols-outlined text-[16px]">done</span>
+</div>
+</div>
+<!-- Vision Card -->
+<div class="p-8 rounded-[2.5rem] bg-surface-container-high/40 hover:bg-surface-container-high/60 transition-all flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-primary text-on-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[30px]">visibility</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Pillar 02</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-4">Our Vision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            To be recognized as the gold standard of trusted home healthcare, geriatric nursing, and post-hospital recovery in Salem and across Tamil Nadu by maintaining zero-compromise clinical governance.
+          </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 text-primary font-label-md text-label-md">
+<span>Continuous care excellence</span>
+<span class="material-symbols-outlined text-[16px]">done</span>
+</div>
+</div>
+<!-- Values Card -->
+<div class="p-8 rounded-[2.5rem] bg-tertiary-fixed/30 hover:bg-tertiary-fixed/40 transition-all flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-tertiary text-on-tertiary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[30px]">favorite</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-bold">Pillar 03</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-4">Our Core Values</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Radical empathy, relentless patient safety, moral transparency, and deep cultural bonding with the local Salem community we are privileged to serve every single day.
+          </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 text-tertiary font-label-md text-label-md">
+<span>Local community bond</span>
+<span class="material-symbols-outlined text-[16px]">done</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Testimonial & Dedicated Team Showcase (Directly matching Image 4) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Left Side: Meet our dedicated team (Light mint asymmetric block) -->
+<div class="lg:col-span-6 p-8 sm:p-10 rounded-[3rem] bg-[#ecfdf5] flex flex-col justify-between relative overflow-hidden shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">
+              Meet our dedicated <span class="text-primary">team</span>
+</h2>
+</div>
+<!-- Team Row -->
+<div class="grid grid-cols-3 gap-4 sm:gap-6 mb-8">
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden mb-3 shadow-md bg-surface">
+<img class="w-full h-full object-cover" data-alt="Portrait of a friendly medical nurse practitioner Billy Vasquez NP with folded arms wearing blue scrubs in Salem clinic." src="images/care-image-15.webp"/>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface text-[15px] sm:text-title-md">Billy Vasquez, NP</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nurse Practitioner</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden mb-3 shadow-md bg-surface">
+<img class="w-full h-full object-cover" data-alt="Portrait of experienced registered nurse Amanda Reed RN in white doctor coat smiling warmly." src="images/care-image-16.webp"/>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface text-[15px] sm:text-title-md">Amanda Reed, RN</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Registered Nurse</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden mb-3 shadow-md bg-surface">
+<img class="w-full h-full object-cover" data-alt="Portrait of senior clinical specialist Dr. Emma Jones in nurse uniform in Salem medical care office." src="images/care-image-17.webp"/>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface text-[15px] sm:text-title-md">Emma Jones, RN</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Senior Specialist</span>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#064e3b] text-white font-label-lg text-label-lg hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-md" href="service.html">
+            View all nurses
+          </a>
+</div>
+</div>
+<!-- Right Side: What our clients say (Light blue-tinted block with active review selector) -->
+<div class="lg:col-span-6 p-8 sm:p-10 rounded-[3rem] bg-[#f0f4ff] flex flex-col justify-between shadow-sm">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary text-center mb-8">
+            What our clients say
+          </h2>
+<div class="flex flex-col items-center text-center max-w-lg mx-auto">
+<!-- 5 Star rating in blue -->
+<div class="flex items-center gap-1.5 text-primary mb-6">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Quote content -->
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-6" id="testimonial-text">
+              "The environment created by the Stackly Salem team was one of healing and positivity. Their holistic approach made a significant difference in my father's post-surgery recovery in Fairlands."
+            </p>
+<span class="font-title-md text-title-md text-primary font-bold" id="testimonial-author">Louis Ferguson</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="testimonial-role">Family Caregiver, Salem</span>
+</div>
+</div>
+<!-- Avatar Selection Cluster -->
+<div class="flex items-center justify-center gap-3 sm:gap-4 mt-8 pt-4">
+<button class="w-12 h-12 rounded-full overflow-hidden transition-all duration-300 ring-2 ring-transparent hover:ring-primary avatar-btn opacity-60" onclick="setTestimonial(0)">
+<img class="w-full h-full object-cover" data-alt="Client avatar portrait of smiling woman" src="images/care-image-18.webp"/>
+</button>
+<button class="w-12 h-12 rounded-full overflow-hidden transition-all duration-300 ring-2 ring-transparent hover:ring-primary avatar-btn opacity-60" onclick="setTestimonial(1)">
+<img class="w-full h-full object-cover" data-alt="Client avatar portrait of smiling man with glasses" src="images/care-image-19.webp"/>
+</button>
+<button class="w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ring-4 ring-primary avatar-btn opacity-100 scale-110" onclick="setTestimonial(2)">
+<img class="w-full h-full object-cover" data-alt="Client avatar portrait of radiant elderly daughter smiling" src="images/care-image-20.webp"/>
+</button>
+<button class="w-12 h-12 rounded-full overflow-hidden transition-all duration-300 ring-2 ring-transparent hover:ring-primary avatar-btn opacity-60" onclick="setTestimonial(3)">
+<img class="w-full h-full object-cover" data-alt="Client avatar portrait of business professional in suit" src="images/care-image-21.webp"/>
+</button>
+<button class="w-12 h-12 rounded-full overflow-hidden transition-all duration-300 ring-2 ring-transparent hover:ring-primary avatar-btn opacity-60" onclick="setTestimonial(4)">
+<img class="w-full h-full object-cover" data-alt="Client avatar portrait of young dad" src="images/care-image-22.webp"/>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Salem Leadership & Advisory Panel -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-12">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+<div>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-primary font-label-md text-label-md inline-block mb-3">Clinical Oversight</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Salem Clinical Leadership</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+        Guided by experienced physicians and supervisory head nurses with decades of combined service across Salem's top healthcare institutes.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Leader 1 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all group">
+<div class="w-full h-64 rounded-2xl overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of senior clinical director Dr. Rajeshwaran MD smiling confidently in modern Salem consultation room." src="images/care-image-23.webp"/>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm mb-2">MD, Internal Medicine</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. K. Rajeshwaran</h3>
+<p class="font-label-md text-label-md text-secondary mb-3">Medical Director & Clinical Lead</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Oversees all home intensive protocols, sterile guidelines, and Salem medical partner alignments with 18+ years of clinical tenure.
+        </p>
+</div>
+<!-- Leader 2 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all group">
+<div class="w-full h-64 rounded-2xl overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Head Supervisory Nurse Priyadarshini M.Sc Nursing with stethoscope and warm smile." src="images/care-image-24.webp"/>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm mb-2">M.Sc. Nursing (Critical Care)</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sister Priyadarshini V.</h3>
+<p class="font-label-md text-label-md text-secondary mb-3">Chief of Nursing Operations</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Directs caregiver vetting, on-field clinical training, and round-the-clock shift assignments throughout the Salem municipal region.
+        </p>
+</div>
+<!-- Leader 3 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all group">
+<div class="w-full h-64 rounded-2xl overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Patient Care and Family Liaison coordinator Anand Kumar seated in welcoming Salem office." src="images/care-image-25.webp"/>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm mb-2">Healthcare Administration</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Anand Kumar</h3>
+<p class="font-label-md text-label-md text-secondary mb-3">Family Care & Support Liaison</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Ensures seamless patient onboarding, transparent financial coordination, and personalized caregiver matching for Salem families.
+        </p>
+</div>
+</div>
+</section>
+<!-- Salem Coverage Notice & Action Callout -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-12 mb-12">
+<div class="rounded-[3rem] bg-gradient-to-r from-primary to-primary-container p-8 sm:p-14 text-on-primary shadow-xl relative overflow-hidden">
+<!-- Decorative background glow -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-white font-label-sm text-label-sm mb-5 backdrop-blur-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+            Local Salem Jurisdiction
+          </div>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight mb-4">
+            Serving all residential zones across Salem
+          </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed leading-relaxed mb-6">
+            Our dispatch units and resident home nurses operate across Fairlands, Alagapuram, Hasthampatti, Shevapet, Suramangalam, Ammapet, Gugai, and neighboring rural taluks within 40km of Salem Junction.
+          </p>
+<div class="flex flex-wrap gap-2.5">
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Fairlands</span>
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Alagapuram</span>
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Hasthampatti</span>
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Suramangalam</span>
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Shevapet</span>
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Ammapet</span>
+<span class="px-3.5 py-1 rounded-full bg-white/15 text-sm font-medium">Steel Plant Road</span>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-center items-start lg:items-end">
+<a class="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container-low transition-colors shadow-lg" href="contact.html">
+            Connect with Care Coordinator
+          </a>
+<div class="flex items-center gap-2 text-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>24/7 Salem Hotline: 0427 240 8800</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Accordion Logic
+  function toggleAccordion(id) {
+    const content = document.getElementById('content-' + id);
+    const icon = document.getElementById('icon-' + id);
+    const isHidden = content.classList.contains('hidden');
+
+    // Close all
+    for (let i = 1; i <= 4; i++) {
+      const c = document.getElementById('content-' + i);
+      const ic = document.getElementById('icon-' + i);
+      if (c && ic) {
+        c.classList.add('hidden');
+        ic.innerText = 'add';
+        ic.classList.remove('rotate-45');
+      }
+    }
+
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.innerText = 'close';
+      icon.classList.add('rotate-45');
+    }
+  }
+
+  // Interactive Testimonial Carousel Data
+  const testimonials = [
+    {
+      text: '"The pediatric nurse assigned to my daughter in Shevapet was so tender and knowledgeable. We never had to worry about dressing changes or evening vitals."',
+      author: 'Kavitha S.',
+      role: 'Mother & Resident, Shevapet'
+    },
+    {
+      text: '"Managing post-bypass recovery for my father at our home in Alagapuram would have been impossible without Stackly. Absolute lifesavers."',
+      author: 'R. Venkatesh',
+      role: 'Family Caregiver, Alagapuram'
+    },
+    {
+      text: '"The environment created by the Stackly Salem team was one of healing and positivity. Their holistic approach made a significant difference in my father\'s recovery in Fairlands."',
+      author: 'Louis Ferguson',
+      role: 'Family Caregiver, Fairlands'
+    },
+    {
+      text: '"Professionalism at its best. The senior nurse was on time every day, kept accurate digital records, and reported daily to our cardiologist."',
+      author: 'Dr. S. Mohan',
+      role: 'Consultant Physician, Salem'
+    },
+    {
+      text: '"Prompt response within 15 minutes when my grandmother needed urgent catheter management. Dependable nursing support in Salem."',
+      author: 'Dinesh Balaji',
+      role: 'Resident, Suramangalam'
+    }
+  ];
+
+  function setTestimonial(index) {
+    const textEl = document.getElementById('testimonial-text');
+    const authorEl = document.getElementById('testimonial-author');
+    const roleEl = document.getElementById('testimonial-role');
+    const buttons = document.querySelectorAll('.avatar-btn');
+
+    if (textEl && authorEl && roleEl) {
+      textEl.innerText = testimonials[index].text;
+      authorEl.innerText = testimonials[index].author;
+      roleEl.innerText = testimonials[index].role;
+
+      buttons.forEach((btn, i) => {
+        if (i === index) {
+          btn.className = 'w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ring-4 ring-primary avatar-btn opacity-100 scale-110';
+        } else {
+          btn.className = 'w-12 h-12 rounded-full overflow-hidden transition-all duration-300 ring-2 ring-transparent hover:ring-primary avatar-btn opacity-60';
+        }
+      });
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div><div class="mb-space-md">
+            <a href="index.html" class="inline-block" aria-label="Stackly Salem Home">
+              <img src="stackly logo.webp" alt="Stackly Salem Healthcare &amp; Nursing" class="h-10 sm:h-12 w-auto object-contain hover:opacity-90 transition-opacity" />
+            </a>
+          </div><div><h4 class="font-title-md text-title-md text-on-surface mb-space-md">24/7 Rapid Response</h4><div class="p-space-md rounded-lg bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)]"><div class="flex items-center gap-space-xs text-error font-label-md text-label-md mb-space-xs"><span class="material-symbols-outlined text-[16px]">emergency</span>Salem Emergency Care</div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Immediate dispatch for intensive home nursing and critical vitals assistance.</p><a class="font-label-md text-label-md text-primary hover:text-primary-container inline-flex items-center gap-1" href="service.html">Call Emergency Care Desk →</a></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 Stackly Salem Healthcare. All rights reserved.</p><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><a class="text-on-surface-variant hover:text-on-surface" href="contact.html">Privacy Policy</a><a class="text-on-surface-variant hover:text-on-surface" href="about.html">Patient Rights</a><a class="text-on-surface-variant hover:text-on-surface" href="about.html">Clinical Governance</a></div></div></div></footer>
+<script>
+// Universal Mobile Header Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('mobile-nav-toggle');
+  const menu = document.getElementById('mobile-nav-menu');
+  const icon = document.getElementById('mobile-nav-icon');
+  
+  if (toggleBtn && menu) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isClosed = menu.classList.contains('hidden');
+      if (isClosed) {
+        menu.classList.remove('hidden');
+        if (icon) icon.textContent = 'close';
+      } else {
+        menu.classList.add('hidden');
+        if (icon) icon.textContent = 'menu';
+      }
+    });
+
+    // Close when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        menu.classList.add('hidden');
+        if (icon) icon.textContent = 'menu';
+      }
+    });
+
+    // Close when clicking a nav link
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        if (icon) icon.textContent = 'menu';
+      });
+    });
+  }
+});
+</script>
+
+</body></html>

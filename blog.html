@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:auto;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}/* scrollbar active */</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#006f67","inverse-primary":"#b3c5ff","secondary":"#006a63","on-background":"#131b2e","on-tertiary-fixed":"#002117","on-secondary-fixed":"#00201d","on-surface":"#131b2e","inverse-surface":"#283044","tertiary":"#145643","primary-container":"#1d5bd8","secondary-container":"#99efe5","on-secondary-fixed-variant":"#00504a","background":"#faf8ff","on-surface-variant":"#434654","tertiary-container":"#316f5a","primary":"#0043b1","surface-container-lowest":"#ffffff","on-tertiary-container":"#afefd5","surface-container-highest":"#dae2fd","surface-container-low":"#f2f3ff","error":"#ba1a1a","surface-bright":"#faf8ff","surface-container-high":"#e2e7ff","inverse-on-surface":"#eef0ff","primary-fixed":"#dbe1ff","on-tertiary-fixed-variant":"#0b513d","surface-container":"#eaedff","on-primary-fixed-variant":"#003fa5","secondary-fixed-dim":"#80d5cb","surface":"#faf8ff","on-primary-container":"#d9e0ff","secondary-fixed":"#9cf2e8","error-container":"#ffdad6","tertiary-fixed":"#b0f0d6","on-error":"#ffffff","on-error-container":"#93000a","primary-fixed-dim":"#b3c5ff","on-primary-fixed":"#00184a","outline":"#737686","surface-tint":"#1055d2","tertiary-fixed-dim":"#95d3ba","on-tertiary":"#ffffff","on-secondary":"#ffffff","surface-variant":"#dae2fd","surface-dim":"#d2d9f4","outline-variant":"#c3c6d6","on-primary":"#ffffff"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"gutter":"1.5rem","margin":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-xl":"2.5rem","space-md":"1rem","space-lg":"1.5rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"title-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"display":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"800"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"20px",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}]}}}};</script>
+<style>
+/* Responsive 320px screen width optimizations */
+html, body {
+  overflow-x:hidden;max-width:100vw;
+}
+* {
+  box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .max-w-7xl {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+@media (max-width: 340px) {
+  .text-display, .text-headline-xl {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+  .text-headline-lg {
+    font-size: 22px !important;
+    line-height: 28px !important;
+  }
+  .p-8, .p-space-lg, .p-space-xl {
+    padding: 14px !important;
+  }
+}
+</style>
+
+<script src="validations.js"></script>
+
+<style id="scroll-fix">
+/* Enable smooth and complete page scrolling */
+html {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth !important;
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  min-height: 100vh !important;
+  position: relative !important;
+  overscroll-behavior: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure modern, visible, functional scrollbars */
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8 !important;
+  border-radius: 5px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b !important;
+}
+</style>
+
+</head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.06)] border-b border-outline-variant/20">
+  <!-- Top Helpline & Region Bar (Responsive down to 320px) -->
+  <div class="bg-primary text-on-primary py-1 px-3 sm:px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col xs:flex-row items-center justify-between text-[11px] sm:text-label-sm gap-0.5">
+      <div class="flex items-center gap-1.5 truncate max-w-[240px] xs:max-w-none text-center xs:text-left">
+        <span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse shrink-0"></span>
+        <span class="truncate">Serving Salem, Fairlands, Hasthampatti &amp; Surrounds</span>
+      </div>
+      <a href="tel:+914272408800" class="inline-flex items-center gap-1 hover:underline text-[11px] sm:text-label-sm font-semibold text-cyan-200">
+        <span class="material-symbols-outlined text-[13px]">call</span>
+        <span>24/7 Helpline: +91 427 240 8800</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Row -->
+  <div class="h-16 sm:h-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 flex items-center justify-between gap-2">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center select-none group shrink-0" aria-label="Stackly Salem Home">
+      <img src="stackly logo.webp" alt="Stackly Salem Healthcare &amp; Nursing" class="h-9 sm:h-11 w-auto object-contain hover:opacity-95 transition-opacity" />
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-1">
+      <a href="index.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Home</a>
+      <a href="about.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">About</a>
+      <a href="service.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Services</a>
+      <a href="blog.html" class="bg-surface-container-high text-primary font-bold rounded-full px-4 py-2 shadow-sm">Blog</a>
+      <a href="contact.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all font-semibold rounded-full px-4 py-2">Contact</a>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <a class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary-container font-label-lg text-xs sm:text-label-lg px-4 sm:px-6 py-2.5 sm:py-3 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md font-bold" href="contact.html#care-inquiry-form">
+        Book Care in Salem
+      </a>
+      <a href="login.html" title="Patient &amp; Family Portal" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-transform hover:scale-105 shadow-sm shrink-0" aria-label="Sign in to care portal">
+        <span class="material-symbols-outlined text-[18px]">person</span>
+      </a>
+      <!-- Mobile Menu Toggle Button (Visible < 1024px) -->
+      <button type="button" id="mobile-nav-toggle" class="lg:hidden p-2 rounded-xl text-primary hover:bg-surface-container focus:outline-none transition-colors shrink-0" aria-label="Toggle Navigation Menu">
+        <span class="material-symbols-outlined text-[26px]" id="mobile-nav-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Dropdown Menu (< 1024px) -->
+  <div id="mobile-nav-menu" class="lg:hidden hidden border-t border-outline-variant/20 bg-surface-container-lowest/98 backdrop-blur-2xl px-4 py-5 shadow-2xl max-h-[calc(100vh-100px)] overflow-y-auto">
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center justify-between pb-2 mb-1 border-b border-surface-container">
+        <span class="font-label-sm text-xs text-secondary font-bold uppercase tracking-wider">Salem Care Navigation</span>
+        <span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">24/7 Active</span>
+      </div>
+      <nav class="flex flex-col gap-1 font-semibold text-sm">
+        <a href="index.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">home</span> Home</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="about.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">info</span> About Us</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="service.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">medical_services</span> Services</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="blog.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-primary-fixed text-primary font-bold">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">article</span> Health Blog</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+        <a href="contact.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface hover:bg-surface-container">
+          <span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">support_agent</span> Contact &amp; Consult</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </a>
+      </nav>
+
+      <div class="pt-3 border-t border-surface-container flex flex-col gap-2">
+        <a href="contact.html#care-inquiry-form" class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-bold text-center py-3 rounded-xl shadow-md text-xs sm:text-sm">
+          <span class="material-symbols-outlined text-[17px]">calendar_month</span>
+          <span>Book Care in Salem</span>
+        </a>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <a href="login.html" class="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-surface-container text-primary font-bold text-center">
+            <span class="material-symbols-outlined text-[15px]">family_restroom</span>
+            <span>Family Portal</span>
+          </a>
+          <a href="login.html?role=admin" class="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-surface-container text-secondary font-bold text-center">
+            <span class="material-symbols-outlined text-[15px]">admin_panel_settings</span>
+            <span>Staff Admin</span>
+          </a>
+        </div>
+        <a href="tel:+914272408800" class="flex items-center justify-center gap-2 py-2 text-secondary text-xs font-bold text-center">
+          <span class="material-symbols-outlined text-[15px]">call</span>
+          <span>Emergency Desk: +91 427 240 8800</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Breadcrumbs & Quick Header Context -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 pt-space-md pb-space-xs">
+<nav class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="index.html">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Home</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-primary font-semibold">Blog &amp; Wellness Insights</span>
+</nav>
+</section>
+<!-- Editorial Hero & Category Navigation -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-space-sm shadow-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span>Verified Clinical Editorial • Salem Care Center</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+          Salem Healthcare &amp; Caregiver Insights
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm max-w-2xl leading-relaxed">
+          Expert advice, clinical tips, and geriatric care guidance written by Stackly’s licensed nursing team and home health specialists in Salem, Tamil Nadu.
+        </p>
+</div>
+<!-- Quick stat snippet for editorial authority -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center gap-space-md shadow-sm shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">100% Peer-Reviewed</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">By Registered Nurses in Salem</div>
+</div>
+</div>
+</div>
+<!-- Filter Category Pills with interactive active state script -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-sm scrollbar-none" id="category-pills">
+<button class="category-pill active-pill px-5 py-2.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-primary text-on-primary shadow-sm hover:scale-[1.02]">
+        All Articles
+      </button>
+<button class="category-pill px-5 py-2.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+        Elderly Care
+      </button>
+<button class="category-pill px-5 py-2.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+        Post-Op Recovery
+      </button>
+<button class="category-pill px-5 py-2.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+        Chronic Disease
+      </button>
+<button class="category-pill px-5 py-2.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+        Caregiver Wellness
+      </button>
+<button class="category-pill px-5 py-2.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+        Salem Health News
+      </button>
+</div>
+</section>
+<!-- Featured Hero Blog Card -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-sm">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(15,23,42,0.06)] overflow-hidden transition-all duration-300 hover:shadow-[0_16px_36px_-6px_rgba(29,91,216,0.1)]">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+<!-- Featured Image Area -->
+<div class="lg:col-span-7 relative min-h-[340px] lg:min-h-[440px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A smiling South Indian registered nurse in modern hospital scrubs comforting an elderly grandfather recovering pleasantly in a brightly lit Salem home living room, bathed in gentle morning sunlight with soft teal and natural warm tones." src="images/care-image-27.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/50 via-transparent to-transparent lg:hidden"></div>
+<div class="absolute top-space-md left-space-md">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/95 backdrop-blur-md font-label-sm text-label-sm text-primary font-bold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Featured Article • 6 min read
+            </span>
+</div>
+</div>
+<!-- Featured Content Area -->
+<div class="lg:col-span-5 p-space-lg lg:p-space-xl flex flex-col justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+                Post-Op Recovery
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                October 18, 2024
+              </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm leading-snug">
+              Managing Post-Surgery Recovery at Home: A Clinical Guide for Salem Families
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Transitioning a loved one from Manipal, Kauvery, or government hospital wards back to your home in Salem requires vigilance. Learn crucial protocols for sterile wound monitoring, preventing deep vein thrombosis, and organizing a hygienic home care corner.
+            </p>
+<!-- Key Takeaways Highlight Box -->
+<div class="bg-surface-container-low rounded-lg p-space-sm mb-space-md space-y-1.5">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Immediate infection indicators specific to humid Western TN climates</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Mobility rehabilitation schedule for joint replacement patients</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary text-title-md">
+                PV
+              </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight">Sister Priyadarshini V.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chief of Nursing • Stackly Salem</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-label-lg text-label-lg text-primary hover:text-primary-container font-bold transition-all group" href="blog.html">
+<span>Read Full Guide</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Column Articles Grid -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-xl">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">Latest Clinical Insights &amp; Care Articles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Practical guidance drafted by certified caregivers, physiotherapists, and nurse clinicians.</p>
+</div>
+<div class="hidden sm:flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<span>Showing 6 curated articles</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Article Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(29,91,216,0.08)] hover:-translate-y-1">
+<div>
+<div class="relative h-52 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An elderly Indian woman carefully walking across an uncluttered polished tiled floor in a clean South Indian apartment hallway, assisted safely by subtle non-slip rugs and a wooden support rail." src="images/care-image-28.webp"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+              Geriatric Care
+            </span>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>5 min read</span>
+<span class="mx-1">•</span>
+<span>Oct 14, 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface tracking-tight mb-space-xs leading-snug hover:text-primary transition-colors">
+<a href="blog.html">Preventing Falls in Elderly Seniors: 7 Practical Home Modifications</a>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+              Bathrooms and threshold corridors in Salem homes are primary fall zones. Simple adaptations like anti-skid grip coatings, grab handles, and smart motion-sensor floor lamps drastically lower hip fracture emergencies.
+            </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface text-label-sm">
+              AK
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Anand Kumar, PT</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container font-bold flex items-center gap-0.5" href="blog.html">
+            Read <span>→</span>
+</a>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(29,91,216,0.08)] hover:-translate-y-1">
+<div>
+<div class="relative h-52 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern clinical medical home setup in Salem showing a calibrated digital multiparameter vitals monitor and oxygen concentrator neatly arranged alongside a comfortable semi-fowler hospital bed." src="images/care-image-29.webp"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+              Clinical Insights
+            </span>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>8 min read</span>
+<span class="mx-1">•</span>
+<span>Oct 11, 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface tracking-tight mb-space-xs leading-snug hover:text-primary transition-colors">
+<a href="blog.html">Understanding Home ICU Care vs Hospital Stay: What Salem Patients Need to Know</a>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+              When is step-down tracheostomy or ventilator nursing appropriate at home? Explore comparative cost efficiencies, infection risk reductions, and the critical monitoring criteria certified nurses look for.
+            </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface text-label-sm">
+              DR
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. S. Rajarathinam</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container font-bold flex items-center gap-0.5" href="blog.html">
+            Read <span>→</span>
+</a>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(29,91,216,0.08)] hover:-translate-y-1">
+<div>
+<div class="relative h-52 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A healthcare professional gently inspecting the foot of a senior diabetic patient using sterile examination gloves and specialized inspection mirror in a serene home setting." src="images/care-image-30.webp"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+              Chronic Disease
+            </span>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>6 min read</span>
+<span class="mx-1">•</span>
+<span>Oct 07, 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface tracking-tight mb-space-xs leading-snug hover:text-primary transition-colors">
+<a href="blog.html">Diabetic Foot Care and Wound Management: Crucial Daily Protocols</a>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+              Neuropathy often masks small cuts until ulcers develop. Our wound management nurses outline the 5-minute morning routine, hydration barriers, and pressure-offloading footwear recommended for Salem diabetics.
+            </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface text-label-sm">
+              NL
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Nurse Lavanya M.</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container font-bold flex items-center gap-0.5" href="blog.html">
+            Read <span>→</span>
+</a>
+</div>
+</article>
+<!-- Article Card 4 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(29,91,216,0.08)] hover:-translate-y-1">
+<div>
+<div class="relative h-52 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A caring daughter sitting beside her elderly mother in an airy South Indian home veranda, sharing a warm cup of herbal tea with an expression of calm mutual affection." src="images/care-image-31.webp"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+              Caregiver Wellness
+            </span>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>4 min read</span>
+<span class="mx-1">•</span>
+<span>Sep 29, 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface tracking-tight mb-space-xs leading-snug hover:text-primary transition-colors">
+<a href="service.html">Emotional Health &amp; Burnout Prevention for Family Caregivers</a>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+              Caring for aging parents alongside career demands takes a hidden toll. Discover practical respite care scheduling, emotional triage strategies, and community support groups available right here in Salem.
+            </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface text-label-sm">
+              RS
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Radha Sundaram, MSW</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container font-bold flex items-center gap-0.5" href="blog.html">
+            Read <span>→</span>
+</a>
+</div>
+</article>
+<!-- Article Card 5 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(29,91,216,0.08)] hover:-translate-y-1">
+<div>
+<div class="relative h-52 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Digital blood pressure monitor resting beside fresh tender coconut water and a clinical diary on a shaded teak table overlooking the Yercaud foothills landscape." src="images/care-image-32.webp"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+              Salem Health News
+            </span>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>5 min read</span>
+<span class="mx-1">•</span>
+<span>Sep 22, 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface tracking-tight mb-space-xs leading-snug hover:text-primary transition-colors">
+<a href="contact.html">How Salem’s Humid Climate Affects Chronic Hypertension in Seniors</a>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+              Western Tamil Nadu undergoes marked seasonal temperature variations. Learn why vasodilation shifts and electrolyte losses prompt sudden BP spikes in seniors residing near Fairlands, Hasthampatti, and Suramangalam.
+            </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface text-label-sm">
+              SK
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. Karthik Shanmugam</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container font-bold flex items-center gap-0.5" href="blog.html">
+            Read <span>→</span>
+</a>
+</div>
+</article>
+<!-- Article Card 6 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(29,91,216,0.08)] hover:-translate-y-1">
+<div>
+<div class="relative h-52 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A nutritionist preparing balanced puree feeds and electrolyte supplements beside a calibrated enteral feeding kit on a clinical countertop." src="images/care-image-33.webp"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+              Elderly Care
+            </span>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>7 min read</span>
+<span class="mx-1">•</span>
+<span>Sep 15, 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface tracking-tight mb-space-xs leading-snug hover:text-primary transition-colors">
+<a href="contact.html">Nutrition &amp; Hydration Guidelines for Bedridden Patients</a>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+              Dysphagia and gastrointestinal stagnation complicate nutritional intake for immobile elders. Our clinical dieticians detail optimal high-protein recipes, aspirate prevention angles, and hydration schedules.
+            </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface text-label-sm">
+              MN
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Meera Nambiar, RD</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container font-bold flex items-center gap-0.5" href="blog.html">
+            Read <span>→</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- Popular Topics & Downloadable Care Checklist Bento -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<!-- Left: Downloadable PDF Care Guide Card -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg lg:p-space-xl flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold mb-space-sm">
+<span class="material-symbols-outlined text-[15px]">download</span>
+            Free Clinical Resource • 28-Page Guide
+          </div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight max-w-lg mb-space-xs">
+            The Complete Salem Home Caregiver Handbook
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-md leading-relaxed">
+            Essential printable vital logs, emergency phone directories for Salem hospitals, medicine administration charts, and pressure-sore prevention checklists compiled by our Head of Nursing.
+          </p>
+<!-- Checklist perks -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-lg">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">task_alt</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Daily Vitals &amp; Sugar Log Sheet</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">task_alt</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Emergency Triage Quick-Card</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">task_alt</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Tamil &amp; English Medication Labels</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">task_alt</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Bedridden Mobility Rotation Map</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-lg text-label-lg px-6 py-3.5 rounded-full hover:scale-[1.02] transition-transform shadow-[0_4px_20px_-2px_rgba(15,23,42,0.08)]" href="contact.html">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span>Download PDF Guide (Free)</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+            Over 1,240 Salem families downloaded
+          </span>
+</div>
+<!-- Decorative background subtle SVG glow -->
+<svg class="absolute -right-12 -bottom-12 w-64 h-64 text-surface-container-high/60 pointer-events-none" fill="currentColor" viewbox="0 0 200 200">
+<circle cx="100" cy="100" opacity="0.4" r="80"></circle>
+<path d="M100 20 L100 180 M20 100 L180 100" opacity="0.3" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+<!-- Right: Frequently Explored Topics & Care Trends -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Trending Health Topics</h4>
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+</div>
+<div class="space-y-space-sm">
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group" href="contact.html">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors text-sm">Bedsore Stage Prevention</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">14 Guides • Updated Weekly</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group" href="contact.html">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">cardiology</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors text-sm">Cardiac Post-Bypass Care</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">9 Guides • Cardiology RN</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group" href="contact.html">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors text-sm">Dementia &amp; Memory Assistance</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">11 Guides • Geriatric Care</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group" href="contact.html">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">vaccines</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors text-sm">Geriatric Pneumonia &amp; Flu Shots</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">6 Guides • At-Home Vaccines</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Need personalized guidance?</span>
+<a class="font-label-md text-label-md text-primary font-bold hover:underline inline-flex items-center gap-1" href="service.html">
+<span>Speak to a Head Nurse</span>
+<span class="material-symbols-outlined text-[16px]">call</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Salem Care Digest Subscription Banner -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-xl">
+<div class="relative bg-primary text-on-primary rounded-xl p-space-lg lg:p-space-xl shadow-[0_12px_36px_-6px_rgba(0,67,177,0.2)] overflow-hidden">
+<!-- Background Ambient Glow -->
+<div class="absolute -right-24 -top-24 w-96 h-96 bg-primary-container rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 bg-secondary rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-primary-container/80 text-on-primary-container font-label-sm text-label-sm mb-space-sm">
+<span class="material-symbols-outlined text-[15px]">mark_email_read</span>
+<span>Fortnightly Healthcare Digest</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl tracking-tight mb-space-xs text-on-primary">
+          Stay Informed with Salem Health Updates
+        </h3>
+<p class="font-body-md text-body-md text-on-primary-container mb-space-lg max-w-xl">
+          Get actionable geriatric insights, local seasonal health alerts for Salem families, and home nursing case studies delivered directly to your inbox twice a month. Zero spam.
+        </p>
+<!-- Newsletter Form -->
+<form class="w-full max-w-md flex flex-col sm:flex-row items-center gap-space-xs bg-surface-container-lowest/15 backdrop-blur-md p-1.5 rounded-full" id="newsletter-form" onsubmit="event.preventDefault(); window.validateNewsletterForm(this);">
+<div class="flex-1 flex items-center px-4 w-full">
+<span class="material-symbols-outlined text-on-primary-container text-[20px] mr-2">mail</span>
+<input class="w-full bg-transparent text-on-primary placeholder:text-on-primary-container/70 text-body-sm focus:outline-none" placeholder="Enter your email address" required="" type="email"/>
+</div>
+<button class="w-full sm:w-auto px-7 py-3 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg font-bold hover:scale-[1.02] transition-transform shadow-md shrink-0" type="submit">
+            Subscribe
+          </button>
+</form>
+<div class="hidden mt-space-sm inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md" id="newsletter-success">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Thank you for subscribing to Stackly Salem Care Digest!</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-primary-container/75 mt-space-md">
+          We protect your privacy. You can unsubscribe anytime with one click.
+        </p>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Category Pills -->
+<script>
+    (function() {
+      const pills = document.querySelectorAll('.category-pill');
+      pills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          pills.forEach(p => {
+            p.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'hover:scale-[1.02]');
+            p.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          this.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          this.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'hover:scale-[1.02]');
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div><div class="mb-space-md">
+            <a href="index.html" class="inline-block" aria-label="Stackly Salem Home">
+              <img src="stackly logo.webp" alt="Stackly Salem Healthcare &amp; Nursing" class="h-10 sm:h-12 w-auto object-contain hover:opacity-90 transition-opacity" />
+            </a>
+          </div><div><h4 class="font-title-md text-title-md text-on-surface mb-space-md">24/7 Rapid Response</h4><div class="p-space-md rounded-lg bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)]"><div class="flex items-center gap-space-xs text-error font-label-md text-label-md mb-space-xs"><span class="material-symbols-outlined text-[16px]">emergency</span>Salem Emergency Care</div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Immediate dispatch for intensive home nursing and critical vitals assistance.</p><a class="font-label-md text-label-md text-primary hover:text-primary-container inline-flex items-center gap-1" href="service.html">Call Ambulance &amp; Nurse Dispatch →</a></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 Stackly Salem Healthcare. All rights reserved.</p><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><a class="text-on-surface-variant hover:text-on-surface" href="contact.html">Privacy Policy</a><a class="text-on-surface-variant hover:text-on-surface" href="about.html">Patient Rights</a><a class="text-on-surface-variant hover:text-on-surface" href="about.html">Clinical Governance</a></div></div></div></footer>
+<script>
+// Universal Mobile Header Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('mobile-nav-toggle');
+  const menu = document.getElementById('mobile-nav-menu');
+  const icon = document.getElementById('mobile-nav-icon');
+  
+  if (toggleBtn && menu) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isClosed = menu.classList.contains('hidden');
+      if (isClosed) {
+        menu.classList.remove('hidden');
+        if (icon) icon.textContent = 'close';
+      } else {
+        menu.classList.add('hidden');
+        if (icon) icon.textContent = 'menu';
+      }
+    });
+
+    // Close when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        menu.classList.add('hidden');
+        if (icon) icon.textContent = 'menu';
+      }
+    });
+
+    // Close when clicking a nav link
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        if (icon) icon.textContent = 'menu';
+      });
+    });
+  }
+});
+</script>
+
+</body></html>
