@@ -294,9 +294,18 @@ window.validateLoginForm = function (event) {
 
     setTimeout(() => {
         const userName = email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        let savedName = '';
+        try {
+            const prev = JSON.parse(localStorage.getItem('stackly_auth') || sessionStorage.getItem('stackly_auth') || '{}');
+            if (prev && prev.name && !prev.name.includes('undefined')) {
+                savedName = prev.name;
+            }
+        } catch (e) {}
+
+        const displayName = savedName || (userName && userName.length > 1 ? userName : (isUser ? 'Rajesh Kannan' : 'Dr. Arvind Swaminathan'));
         const authObj = {
             email: email,
-            name: `${fname} ${lname}`,
+            name: displayName,
             role: roleTitle,
             roleKey: role,
             loginTime: new Date().toISOString()
@@ -781,7 +790,29 @@ document.addEventListener('click', (e) => {
     const a = e.target.closest('a');
     if (a) {
         const href = a.getAttribute('href');
-        if (href === '#' || href === '' || href === 'javascript:void(0)' || href === 'javascript:;' || a.getAttribute('data-action') === '404') {
+
+        // Explicit 404 links (e.g. dead links or non-logo footer links marked with data-action="404")
+        if (a.getAttribute('data-action') === '404' || href === '404.html') {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // Always allow valid navigation to internal pages, anchors, phone, and mailto
+        if (href) {
+            const clean = href.split('#')[0].split('?')[0].trim();
+            const allowedPages = [
+                'index.html', 'about.html', 'service.html', 'services.html',
+                'blog.html', 'contact.html', 'login.html', 'signup.html',
+                'user-dashboard.html', 'admin.html'
+            ];
+            if (allowedPages.includes(clean) || href.startsWith('tel:') || href.startsWith('mailto:') || (href.startsWith('#') && href.length > 1)) {
+                return; // Let standard navigation happen without interruption
+            }
+        }
+
+        if (href === '#' || href === '' || href === 'javascript:void(0)' || href === 'javascript:;') {
             e.preventDefault();
             e.stopPropagation();
             window.location.href = '404.html';

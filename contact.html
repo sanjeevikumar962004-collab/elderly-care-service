@@ -352,7 +352,7 @@ body {
 </div>
 </div>
 <!-- RIGHT COLUMN: Nursing Consultation / Assessment Form (7 Cols) -->
-<div class="lg:col-span-7">
+<div class="lg:col-span-7 flex flex-col gap-6">
 <div class="rounded-lg bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-sm relative">
 <!-- Card Header & Badge -->
 <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
@@ -493,6 +493,87 @@ body {
 </div>
 </form>
 </div>
+
+<!-- Reassurance & Rapid Dispatch SLA Card (Fills Right Column Beside Salem Hub Map) -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md lg:p-space-lg shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+  <div>
+    <div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container">
+      <div class="flex items-center gap-2 text-primary font-bold">
+        <span class="material-symbols-outlined text-[20px]">verified_user</span>
+        <span class="font-title-md text-title-md text-on-surface">Salem Patient Intake Guarantee &amp; Timeline</span>
+      </div>
+      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary text-[11px] font-bold">Standard SLA</span>
+    </div>
+
+    <!-- 3-Step Rapid Timeline -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-4">
+      <!-- Step 1 -->
+      <div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-2 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-full bg-primary text-white text-xs font-extrabold flex items-center justify-center">1</span>
+          <span class="font-label-sm text-[11px] font-bold text-secondary flex items-center gap-1">
+            <span class="material-symbols-outlined text-[13px]">timer</span> &lt; 15 Mins
+          </span>
+        </div>
+        <div>
+          <h4 class="font-title-md text-sm font-bold text-on-surface mb-0.5">Clinical Triage</h4>
+          <p class="font-body-sm text-[12px] text-on-surface-variant leading-snug">
+            Senior triage nurse reviews condition, medications, and mobility needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-2 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-full bg-secondary text-white text-xs font-extrabold flex items-center justify-center">2</span>
+          <span class="font-label-sm text-[11px] font-bold text-secondary flex items-center gap-1">
+            <span class="material-symbols-outlined text-[13px]">timer</span> &lt; 45 Mins
+          </span>
+        </div>
+        <div>
+          <h4 class="font-title-md text-sm font-bold text-on-surface mb-0.5">Nurse Matching</h4>
+          <p class="font-body-sm text-[12px] text-on-surface-variant leading-snug">
+            We confirm shift details with family and assign a certified Salem nurse.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-2 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-full bg-tertiary text-white text-xs font-extrabold flex items-center justify-center">3</span>
+          <span class="font-label-sm text-[11px] font-bold text-tertiary flex items-center gap-1">
+            <span class="material-symbols-outlined text-[13px]">timer</span> &lt; 2 Hours
+          </span>
+        </div>
+        <div>
+          <h4 class="font-title-md text-sm font-bold text-on-surface mb-0.5">Doorstep Arrival</h4>
+          <p class="font-body-sm text-[12px] text-on-surface-variant leading-snug">
+            Nurse arrives at your home with sterilized kits and customized protocol.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quality Protocol Badges -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-surface-container text-xs text-on-surface-variant">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px] text-emerald-600">verified</span>
+        <span class="font-semibold text-slate-700">100% Background Verified</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px] text-primary">clinical_notes</span>
+        <span class="font-semibold text-slate-700">Daily Bedside Digital Reports</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px] text-secondary">support_agent</span>
+        <span class="font-semibold text-slate-700">24/7 Family Coordinator Line</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 </div>
 </section>
