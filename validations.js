@@ -294,13 +294,15 @@ window.validateLoginForm = function (event) {
 
     setTimeout(() => {
         const userName = email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        sessionStorage.setItem('stackly_auth', JSON.stringify({
+        const authObj = {
             email: email,
-            name: userName,
+            name: `${fname} ${lname}`,
             role: roleTitle,
             roleKey: role,
             loginTime: new Date().toISOString()
-        }));
+        };
+        sessionStorage.setItem('stackly_auth', JSON.stringify(authObj));
+        localStorage.setItem('stackly_auth', JSON.stringify(authObj));
 
         const savedRedirect = sessionStorage.getItem('stackly_redirect');
         sessionStorage.removeItem('stackly_redirect');
@@ -409,13 +411,15 @@ window.validateSignupForm = function (event) {
     }
 
     setTimeout(() => {
-        sessionStorage.setItem('stackly_auth', JSON.stringify({
+        const authObj = {
             email: email,
             name: `${fname} ${lname}`,
             role: roleTitle,
             roleKey: role,
             loginTime: new Date().toISOString()
-        }));
+        };
+        sessionStorage.setItem('stackly_auth', JSON.stringify(authObj));
+        localStorage.setItem('stackly_auth', JSON.stringify(authObj));
 
         const targetUrl = isUser ? 'user-dashboard.html' : 'admin.html';
         window.showGlobalToast('Account Created ✓', `Welcome to Salem Elderly Care, ${fname}! Loading your portal…`, 'success');

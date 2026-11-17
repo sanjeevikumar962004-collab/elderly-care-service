@@ -311,35 +311,44 @@ body {
             </p>
 </div>
 </div>
-<!-- Interactive Map Preview Card -->
+<!-- Interactive Embedded Location Map -->
 <div class="rounded-lg bg-surface-container-lowest p-space-md shadow-sm">
-<div class="flex items-center justify-between mb-3 px-1">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
-<span class="font-title-md text-title-md text-on-surface">Salem Hub Coordinates</span>
-</div>
-<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Live Dispatch GPS</span>
-</div>
-<!-- Google Maps Static Pipeline container with data-location -->
-<div class="relative w-full h-56 rounded-DEFAULT overflow-hidden group">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-location="Salem Junction Fairlands Tamil Nadu India" style="background-image: url('images/care-image-34.webp');"></div>
-<!-- Map Overlay Floating Pin Card -->
-<div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/95 backdrop-blur-md p-3 rounded-DEFAULT shadow-md flex items-center justify-between">
-<div class="flex items-center gap-2.5">
-<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[16px]">health_and_safety</span>
-</div>
-<div class="flex flex-col">
-<span class="font-label-md text-label-md text-on-surface">Junction Main Care Base</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Fairlands Circle, Salem</span>
-</div>
-</div>
-<a class="px-3 py-1.5 rounded-full bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors flex items-center gap-1 shrink-0" href="https://maps.google.com/?q=Salem+Junction+Tamil+Nadu" rel="noopener noreferrer" target="_blank">
-<span>Navigate</span>
-<span class="material-symbols-outlined text-[14px]">north_east</span>
-</a>
-</div>
-</div>
+  <div class="flex items-center justify-between mb-3 px-1">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
+      <span class="font-title-md text-title-md text-on-surface">Salem Hub Location</span>
+    </div>
+    <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-bold border border-emerald-200">Live Interactive Map</span>
+  </div>
+
+  <!-- Embedded Google Maps Location Iframe -->
+  <div class="relative w-full h-64 sm:h-72 rounded-DEFAULT overflow-hidden shadow-inner border border-outline-variant/30 group">
+    <iframe 
+      src="https://maps.google.com/maps?q=Fairlands%2C%20Salem%2C%20Tamil%20Nadu%2C%20India&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+      class="w-full h-full border-0" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade" 
+      title="Stackly Salem Elderly Care Services - Fairlands Salem Location Map">
+    </iframe>
+  </div>
+
+  <!-- Location Details & Driving Navigation Action -->
+  <div class="mt-3 p-3 bg-surface-container-low rounded-DEFAULT flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[16px]">health_and_safety</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-label-md text-label-md text-on-surface font-bold">Fairlands Central Care Base</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Near Cherry Road Junction, Salem - 636 004</span>
+      </div>
+    </div>
+    <a class="px-4 py-2 rounded-full bg-primary text-white hover:bg-primary-container font-label-sm text-label-sm font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm shrink-0" href="https://maps.google.com/?q=Fairlands+Salem+Tamil+Nadu" rel="noopener noreferrer" target="_blank">
+      <span>Get Driving Directions</span>
+      <span class="material-symbols-outlined text-[14px]">directions</span>
+    </a>
+  </div>
 </div>
 </div>
 <!-- RIGHT COLUMN: Nursing Consultation / Assessment Form (7 Cols) -->
