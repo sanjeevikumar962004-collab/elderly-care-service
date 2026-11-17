@@ -177,27 +177,38 @@
         }
         #topbar.collapsed { left: var(--sidebar-collapsed); }
 
-        .topbar-left { display: flex; align-items: center; gap: 14px; }
+        .topbar-left {
+            display: flex; align-items: center; gap: 12px;
+            min-width: 0; flex: 1; overflow: hidden;
+        }
         .sidebar-toggle-btn {
             background: none; border: 1px solid var(--border);
             border-radius: 8px; width: 34px; height: 34px;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; color: var(--text-secondary); transition: all 0.2s;
+            flex-shrink: 0;
         }
         .sidebar-toggle-btn:hover { background: #f1f5f9; color: var(--text-primary); }
 
-        .breadcrumb { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-        .breadcrumb span { color: var(--text-primary); font-weight: 600; }
+        .breadcrumb {
+            font-size: 13px; color: var(--text-muted); font-weight: 500;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .breadcrumb span { color: var(--text-primary); }
 
-        .topbar-right { display: flex; align-items: center; gap: 12px; }
+        .topbar-right {
+            display: flex; align-items: center; gap: 10px;
+            flex-shrink: 0;
+        }
         .help-call-pill {
-            display: inline-flex; align-items: center; gap: 6px;
+            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
             padding: 6px 12px; border-radius: 9999px;
             background: #fef2f2; color: #dc2626; border: 1px solid #fee2e2;
             font-size: 11.5px; font-weight: 700; text-decoration: none;
+            white-space: nowrap; flex-shrink: 0;
             transition: all 0.2s;
         }
-        .help-call-pill:hover { background: #fee2e2; }
+        .help-call-pill:hover { background: #fee2e2; transform: translateY(-1px); }
 
         /* MAIN CONTENT */
         #main-content {
@@ -342,9 +353,59 @@
                 transform: translateX(0);
             }
             .mobile-close-btn { display: flex; }
-            #topbar { left: 0 !important; padding: 0 16px; }
-            #main-content { margin-left: 0 !important; padding: 18px 14px 80px; }
+            #topbar {
+                left: 0 !important;
+                height: 58px !important;
+                padding: 0 12px !important;
+            }
+            #main-content {
+                margin-left: 0 !important;
+                margin-top: 58px !important;
+                padding: 14px 12px 84px !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+            }
             #mobile-bottom-nav { display: flex; }
+            .topbar-left { gap: 8px !important; }
+            .topbar-right { gap: 8px !important; }
+        }
+
+        @media (max-width: 640px) {
+            .help-call-pill {
+                width: 36px !important;
+                height: 36px !important;
+                padding: 0 !important;
+                border-radius: 50% !important;
+            }
+            .help-call-pill .help-pill-text {
+                display: none !important;
+            }
+            .user-avatar {
+                width: 36px !important;
+                height: 36px !important;
+            }
+            .sidebar-toggle-btn {
+                width: 32px !important;
+                height: 32px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 14px !important;
+                border-radius: 12px !important;
+            }
+            .modal-card {
+                margin: 8px !important;
+                max-width: calc(100vw - 16px) !important;
+                border-radius: 14px !important;
+            }
+            .modal-header, .modal-footer {
+                padding: 14px !important;
+            }
+            .modal-body {
+                padding: 14px !important;
+            }
         }
     </style>
 </head>
@@ -423,14 +484,14 @@
                 <span class="material-symbols-outlined text-[20px]">menu</span>
             </button>
             <div class="breadcrumb">
-                <span id="page-title">Care Overview</span> • <span id="page-breadcrumb" class="font-normal text-slate-500">Stackly Salem Elderly Care Suite</span>
+                <span id="page-title" class="font-bold text-slate-900">Care Overview</span><span class="hidden md:inline text-slate-400"> • </span><span id="page-breadcrumb" class="hidden md:inline font-normal text-slate-500">Stackly Salem Elderly Care Suite</span>
             </div>
         </div>
 
         <div class="topbar-right">
-            <a href="tel:+914272408800" class="help-call-pill" title="Emergency Nurse Dispatch">
-                <span class="material-symbols-outlined text-[15px] animate-pulse">emergency</span>
-                <span>24/7 Helpline: +91 427 240 8800</span>
+            <a href="tel:+914272408800" class="help-call-pill" title="Emergency Helpline: +91 427 240 8800">
+                <span class="material-symbols-outlined text-[16px] animate-pulse">emergency</span>
+                <span class="help-pill-text hidden sm:inline">24/7 Helpline: +91 427 240 8800</span>
             </a>
 
             <button class="btn-primary hidden sm:inline-flex" onclick="openBookModal()">
@@ -1174,7 +1235,7 @@
             </div>
             <form id="record-vitals-form" onsubmit="handleRecordVitals(event)">
                 <div class="modal-body space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <div class="form-group">
                             <label class="form-label" for="input-bp">Blood Pressure (mmHg)</label>
                             <input type="text" id="input-bp" class="form-input" placeholder="e.g. 120/80" required>
@@ -1185,7 +1246,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <div class="form-group">
                             <label class="form-label" for="input-spo2">Oxygen SpO2 (%)</label>
                             <input type="number" id="input-spo2" class="form-input" placeholder="e.g. 98" min="70" max="100" required>
@@ -1196,7 +1257,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <div class="form-group">
                             <label class="form-label" for="input-temp">Body Temp (°F)</label>
                             <input type="text" id="input-temp" class="form-input" placeholder="e.g. 98.4" required>
